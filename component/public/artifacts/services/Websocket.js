@@ -5,11 +5,11 @@ Vue.service("websocket", {
 			stopped: false,
 			backlog: [],
 			// a list of functions to call when a new message arrives
-			subscribers: []
+			subscribers: [],
+			connected: false
 		}
 	},
 	activate: function(done) {
-		var connected = false;
 		var id = new Date().toISOString().replace(/[:.-]+/g, "");
 		var promise = new nabu.utils.promise();
 	
@@ -25,7 +25,7 @@ Vue.service("websocket", {
 			url += "p/w/" + id;
 			self.socket = new WebSocket(url, "data");
 			self.socket.onopen = function(event) {
-				connected = true;
+				self.connected = true;
 				if (self.backlog.length > 0) {
 					self.backlog.splice(0).forEach(function(event) {
 						self.socket.send(JSON.stringify(event));
@@ -35,7 +35,7 @@ Vue.service("websocket", {
 			};
 			// if it is remotely closed, we will try again!
 			self.socket.onclose = function(event) {
-				connected = false;
+				self.connected = false;
 				// don't reconnect if we actually stopped
 				if (!self.stopped) {
 					setTimeout(start, 2000);
@@ -52,7 +52,7 @@ Vue.service("websocket", {
 		};
 		
 		var heartbeat = function() {
-			if (connected) {
+			if (self.connected) {
 				self.socket.send(JSON.stringify({
 					type: "heartbeat",
 					content: {
