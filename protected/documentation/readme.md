@@ -1,0 +1,1 @@
+Currently the websocket component has to be at the root of your application, so not under /api/otr or the likes.

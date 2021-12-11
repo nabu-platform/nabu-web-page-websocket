@@ -1,0 +1,4 @@
+<structure name="standardMessage">
+    <field comment="The message type is used to know which should handle it" name="type" type="java.lang.String"/>
+    <field comment="Generally JSON content" minOccurs="0" name="content" type="java.lang.String"/>
+</structure>

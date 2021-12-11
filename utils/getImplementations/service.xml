@@ -1,0 +1,40 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="f73d7580-dcf0-40f1-95d5-0e9a1539e6ce"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="b36d3441-564d-4569-a6cd-4ebef1de8b76"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="eaac09b4-55c1-49aa-80b6-f136b1fa56c7"
+				serviceId="nabu.utils.reflection.Service.listImplementations"
+				resultName="result2d1534b8caa647e6904790484d987f77"
+				temporaryMapping="true"
+				x="96"
+				y="103"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="328d3a30-030d-46c8-be93-3d64f22c3051"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>nabu.web.page.websocket.processor</from>
+				<to>interfaceId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="1c374383-d53f-4962-bb42-64d33075e18f"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result2d1534b8caa647e6904790484d987f77/implementations/id</from>
+			<to>output/serviceIds</to>
+		</steps>
+	</steps>
+</sequence>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.cache.provider.memory.MemoryCacheProviderManager" created="2021-12-08T22:42:17.398+01:00" lastModified="2021-12-08T22:42:20.249+01:00" leaf="true" version="3">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+</node>

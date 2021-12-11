@@ -1,0 +1,11 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field name="webSocketId" type="java.lang.String"/>
+        <field name="webSocketInstanceId" type="java.lang.String"/>
+        <field name="webApplicationId" type="java.lang.String"/>
+        <field name="path" type="java.lang.String"/>
+        <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" minOccurs="0" name="pathValues"/>
+        <structure definition="nabu.web.page.websocket.standardMessage" name="message"/>
+    </structure>
+    <structure name="output"/>
+</structure>

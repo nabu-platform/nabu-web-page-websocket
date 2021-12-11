@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.iface.ServiceInterfaceManager" created="2021-12-08T22:40:03.139+01:00" lastModified="2021-12-08T22:44:54.725+01:00" leaf="true" version="9">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>java.lang.String</references>
+    <references>be.nabu.libs.types.api.KeyValuePair</references>
+    <references>nabu.web.page.websocket.standardMessage</references>
+</node>

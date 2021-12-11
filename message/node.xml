@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2021-12-08T22:35:43.240+01:00" lastModified="2021-12-11T09:33:14.164+01:00" leaf="true" version="12">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>be.nabu.libs.types.api.KeyValuePair</references>
+    <references>nabu.web.page.websocket.standardMessage</references>
+    <references>nabu.web.page.websocket.processor</references>
+    <references>java.lang.Object</references>
+    <references>java.lang.String</references>
+    <references>be.nabu.eai.module.web.websockets.api.WebSocketConnectionListener.message</references>
+    <references>be.nabu.libs.authentication.api.Device</references>
+    <references>be.nabu.libs.authentication.api.Token</references>
+    <references>java.lang.Integer</references>
+    <references>nabu.data.json.Services.unmarshal</references>
+    <references>java.io.InputStream</references>
+    <references>nabu.web.page.websocket.utils.getImplementations</references>
+</node>

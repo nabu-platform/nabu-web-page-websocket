@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<websocketProvider>
+    <serverPath>/p/w/{id}</serverPath>
+    <messageService>nabu.web.page.websocket.message</messageService>
+    <connectService>nabu.web.page.websocket.connect</connectService>
+    <disconnectService>nabu.web.page.websocket.disconnect</disconnectService>
+</websocketProvider>

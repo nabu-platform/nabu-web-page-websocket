@@ -1,0 +1,8 @@
+<structure interface="be.nabu.eai.module.web.websockets.api.WebSocketConnectionListener.message" name="pipeline">
+    <structure name="input">
+        <field name="content" type="java.io.InputStream"/>
+    </structure>
+    <structure name="output"/>
+    <structure definition="nabu.web.page.websocket.standardMessage" name="message"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="serviceIds" type="java.lang.String"/>
+</structure>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2021-12-08T22:41:59.436+01:00" lastModified="2021-12-08T22:43:15.524+01:00" leaf="true" version="4">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.utils.reflection.Service.listImplementations</references>
+    <references>java.lang.String</references>
+</node>
