@@ -6,7 +6,8 @@ Vue.service("websocket", {
 			backlog: [],
 			// a list of functions to call when a new message arrives
 			subscribers: [],
-			connected: false
+			connected: false,
+			heartbeatTimer: null
 		}
 	},
 	activate: function(done) {
@@ -35,6 +36,7 @@ Vue.service("websocket", {
 			};
 			// if it is remotely closed, we will try again!
 			self.socket.onclose = function(event) {
+				console.log("Disconnected!", event);
 				self.connected = false;
 				// don't reconnect if we actually stopped
 				if (!self.stopped) {
@@ -51,18 +53,6 @@ Vue.service("websocket", {
 			};
 		};
 		
-		var heartbeat = function() {
-			if (self.connected) {
-				self.socket.send(JSON.stringify({
-					type: "heartbeat",
-					content: {
-						timestamp: new Date().toISOString()
-					}
-				}));
-			}
-			setTimeout(heartbeat, 10000);
-		};
-		heartbeat();
 		start();
 		done();
 	},
@@ -75,6 +65,19 @@ Vue.service("websocket", {
 		done();
 	},
 	methods: {
+		heartbeat: function() {
+			if (this.heartbeatTimer) {
+				clearTimeout(this.heartbeatTimer);
+				this.heartbeatTimer = null;
+			}
+			var self = this;
+			this.heartbeatTimer = setTimeout(function() {
+				self.heartbeatTimer = null;
+				self.send("heartbeat", {
+					timestamp: new Date().toISOString()
+				});
+			}, 30000);
+		},
 		// we send back an unsubscribe function
 		subscribe: function(caller) {
 			this.subscribers.push(caller);
@@ -99,6 +102,8 @@ Vue.service("websocket", {
 			else {
 				this.backlog.push(data);
 			}
+			// make sure we heartbeat on inaction
+			this.heartbeat();
 		},
 		stop: function() {
 			this.stopped = true;
