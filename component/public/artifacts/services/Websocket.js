@@ -36,7 +36,6 @@ Vue.service("websocket", {
 			};
 			// if it is remotely closed, we will try again!
 			self.socket.onclose = function(event) {
-				console.log("Disconnected!", event);
 				self.connected = false;
 				// don't reconnect if we actually stopped
 				if (!self.stopped) {
@@ -45,7 +44,6 @@ Vue.service("websocket", {
 			};
 			self.socket.onmessage = function(event) {
 				// var data = event.data
-				console.log("Received message", event.data);
 				var parsed = JSON.parse(event.data);
 				self.subscribers.forEach(function(x) {
 					x(parsed);
