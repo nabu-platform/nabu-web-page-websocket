@@ -14,5 +14,29 @@
 			<groupId>nabu.web</groupId>
 			<artifactId>component</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>nabu.services</groupId>
+			<artifactId>vm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.types</groupId>
+			<artifactId>structure</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.services</groupId>
+			<artifactId>iface</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu</groupId>
+			<artifactId>utils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.misc</groupId>
+			<artifactId>cache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.protocols.websockets</groupId>
+			<artifactId>provider</artifactId>
+		</dependency>
 	</dependencies>
 </project>
